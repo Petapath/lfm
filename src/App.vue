@@ -4,7 +4,7 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-	<main class="responsive max padding" style="background-color:chartreuse;">
+    <main class="responsive max padding" style="background-color:chartreuse;">
 
 	<nav class="bottom" style="background-color: chartreuse;">
 	  <a>
@@ -24,6 +24,7 @@ import HelloWorld from './components/HelloWorld.vue'
 	<article class="large padding responsive no-border no-elevate" style="background-color:greenyellow;">
   		<RouterView />
 	</article>
+    </main>
 </template>
 
 <style>
