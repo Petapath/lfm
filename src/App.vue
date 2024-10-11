@@ -21,7 +21,7 @@ import HelloWorld from './components/HelloWorld.vue'
 	  </a>
 	</nav>
 
-	<article class="large padding responsive no-border no-elevate" style="background-color:greenyellow;">
+	<article class="max padding responsive no-border no-elevate" style="background-color:greenyellow;">
   		<RouterView />
 	</article>
     </main>
