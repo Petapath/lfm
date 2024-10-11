@@ -23,11 +23,8 @@ function mouseOutEffect(target) {
 </script>
 
 <template>
-  <h1>{{ msg }}</h1>
-  <input v-model="msg" /> <br><br><br>
 
-
-   <div>
+   <div class="padding center">
         <svg width="410" height="300" version="1.1"  xmlns="http://www.w3.org/2000/svg">
 
           <!-- blat -->
