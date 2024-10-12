@@ -20,6 +20,7 @@ import { RouterLink, RouterView } from 'vue-router'
 <style>
   @import 'https://cdn.jsdelivr.net/npm/beercss@3.7.10/dist/cdn/beer.min.css';
 
+/*
   nav {
     width: 100%;
     font-size: 14px;
@@ -36,5 +37,6 @@ import { RouterLink, RouterView } from 'vue-router'
   nav a i:hover {
     background-color: red;
   }
+*/
 
 </style>
