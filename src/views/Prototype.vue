@@ -24,7 +24,8 @@ function mouseOutEffect(target) {
 
 <template>
 
-   <div class="padding center">
+   <div class="responsive max padding center">
+      <div class="no-round" style="text-align:center;">
         <svg width="410" height="300" version="1.1"  xmlns="http://www.w3.org/2000/svg">
 
           <!-- blat -->
@@ -59,13 +60,14 @@ function mouseOutEffect(target) {
           <rect class="svg-rect" id="svg_1" x="302"   y="85" width="5" height="115" stroke="#000000" stroke-width="3px" stroke-linecap="round" stroke-linejoin="round" fill="transparent"/>
         </svg>
       </div>
+  </div>
 
-      <div class="mydialog" id="#e123">Tip on <b>SVG</b> rectangle</div>
-      <div class="mydialog" id="#e222">Here we have another description</div>
+  <div class="mydialog" id="#e123">Tip on <b>SVG</b> rectangle</div>
+  <div class="mydialog" id="#e222">Here we have another description</div>
 
 </template>
 
-<style>
+<style scoped>
 @import 'https://cdn.jsdelivr.net/npm/beercss@3.7.10/dist/cdn/beer.min.css';
 
   .bar {
@@ -112,5 +114,10 @@ function mouseOutEffect(target) {
   outline: none;
 }
 
+        .do-nothing {
+                all:unset;
+                background:blue;
+                opacity:1;
+        }
 
 </style>
