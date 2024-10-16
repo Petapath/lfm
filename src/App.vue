@@ -3,18 +3,37 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-    <main class="responsive max padding" style="background-color:chartreuse; width:100%;">
+    <main class="responsive max padding" style="background-color:whitesmoke; width:100%;">
 
-	<nav class="bottom center-align" style="background-color: chartreuse;">
-	    <RouterLink to="/"><i>home</i>Home</RouterLink>
-	    <RouterLink to="/about"><i>search</i>Search</RouterLink>
-	    <RouterLink to="/prototype"><i>share</i>Prototype</RouterLink>
-	</nav>
+	<header style="background-color:whitesmoke;">
+	  <nav class="top" style="background-color:whitesmoke;">
+	    <button class="circle transparent">
+	      <i>arrow_back</i>
+	    </button>
+	    <h6 class="max"></h6>
+	    <button class="circle transparent">
+	      <i>attach_file</i>
+	    </button>
+	    <button class="circle transparent">
+	      <i>today</i>
+	    </button>
+	    <button class="circle transparent">
+	      <i>more_vert</i>
+	    </button>
+	  </nav>
+	</header>
 
-	<article class="max padding responsive no-border no-elevate" style="background-color:greenyellow;">
-  		<RouterView />
-	</article>
+  	<RouterView />
+
     </main>
+
+<nav class="bottom center-align" style="background-color: whitesmoke;">
+    <RouterLink to="/"><i>home</i>Home</RouterLink>
+    <RouterLink to="/about"><i>handyman</i>Search</RouterLink>
+    <RouterLink to="/prototype"><i>architecture</i>Prototype</RouterLink>
+</nav>
+
+
 </template>
 
 <style>

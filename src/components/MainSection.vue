@@ -1,37 +1,8 @@
 <script setup>
-import { ref } from 'vue'
-//import images from "../stores/images.js"
-const images = ref([ "/img/IMG_2577.jpg", 
-		     "/img/IMG_2578.jpg", 
-		     "/img/IMG_2579.jpg", 
-		     "/img/IMG_2581.jpg", 
-		     "/img/IMG_2582.jpg" ]);
-
-
-const msg = ref('Hello World!');
-
-function mouseOverEffect(target,evt) {
-  console.log(evt);
-  var tgt = document.getElementById(target); 
-
-  tgt.style.visibility="visible";
-  tgt.style.display="block";
-  tgt.style.left=evt.clientX + 'px';
-  tgt.style.top=evt.clientY  + 'px';
-}
-
-function mouseOutEffect(target) {
-  document.getElementById(target).style.visibility="hidden";
-}
-
 </script>
 
 <template>
-
-  <article class="large padding responsive no-border no-elevate" style="background-color:#F0F0F0;">
-   <div class="responsive max padding center">
-      <div class="no-round" style="text-align:center;">
-        <svg width="410" height="300" version="1.1"  xmlns="http://www.w3.org/2000/svg">
+        <svg width="401" height="300" version="1.1"  xmlns="http://www.w3.org/2000/svg">
 
           <!-- blat -->
           <rect x="2"   y="8" width="153" height="10" stroke="#000000" stroke-width="3px" stroke-linecap="round" stroke-linejoin="round" fill="transparent"/>
@@ -64,75 +35,9 @@ function mouseOutEffect(target) {
           <rect class="svg-rect" id="svg_1" x="148"   y="85" width="5" height="115" stroke="#000000" stroke-width="3px" stroke-linecap="round" stroke-linejoin="round" fill="transparent"/>
           <rect class="svg-rect" id="svg_1" x="302"   y="85" width="5" height="115" stroke="#000000" stroke-width="3px" stroke-linecap="round" stroke-linejoin="round" fill="transparent"/>
         </svg>
-      </div>
-  </div>
- </article>
-
-  <article class="padding responsive no-border no-elevate" style="background-color:#F0F0F0;">
-  <h5 class="bold">Gallery</h5>
-  <div class="row scroll padding">
-    <div class="round shadow" style="border-radius: 10px; box-shadow: 5px 5px 5px grey;" v-for="pic in images">
-      <img class="small-width small-height" :src="pic"/>
-    </div>
-  </div>
-  </article>
-
-  <div class="mydialog" id="#e123">Tip on <b>SVG</b> rectangle</div>
-  <div class="mydialog" id="#e222">Here we have another description</div>
 
 </template>
 
 <style scoped>
-@import 'https://cdn.jsdelivr.net/npm/beercss@3.7.10/dist/cdn/beer.min.css';
-
-  .bar {
-    fill: none;
-  }
-  .bar:hover {
-    fill: #ec008c;
-    opacity: 1;
-  }
-  
-  .maindrawer {
-    fill:none;
-  }
-   .maindrawer:hover {
-    fill:red;
-    opacity: 0.8;
-  }
-
-  .mytooltipcontents {
-    visibility: hidden;
-    position: absolute;
-    width:max-content;
-  }
-
-  .mydialog {
-  display: none;
-  border: none;
-  opacity: 0.9;
-  visibility: hidden;
-  position: fixed;
-  box-shadow: var(--elevate2);
-  color: var(--on-surface);
-  background-color: var(--surface-container-high);
-  padding: 1.5rem;
-  z-index: 100;
-  inset: 10% auto auto 50%;
-  min-inline-size: 20rem;
-  max-inline-size: 100%;
-  max-block-size: 80%;
-  overflow-x: hidden;
-  overflow-y: auto;
-  transition: all var(--speed3), 0s background-color;
-  border-radius: 0.75rem;
-  outline: none;
-}
-
-        .do-nothing {
-                all:unset;
-                background:blue;
-                opacity:1;
-        }
-
 </style>
+
