@@ -1,6 +1,8 @@
 <script setup>
 import c1 from '../components/c1.vue'
 import c2 from '../components/c2.vue'
+import OuterLeftLeg from '../components/OuterLegLeft.vue'
+import Display from '../components/Display.vue'
 
 const comps = [ { k:'c1',   v:c1 },
 		{ k:'c2',   v:c2 },
@@ -13,7 +15,7 @@ const kees = comps.map(({k}) => ({k}));
 </script>
 
 <template>
-  <main>
+  <main class="responsive max padding" style="background-color:chartreuse;">
    <div v-for="(c,i) in comps">
 	   <h4>{{i}} {{c.k}}</h4>
 	   <component :is="c.v"></component>
@@ -24,5 +26,16 @@ const kees = comps.map(({k}) => ({k}));
    <pre>
      {{kees}}
    </pre>
+
+
+   <article class="large padding responsive ">
+     <div class="row no-space top-align scroll">
+		<OuterLeftLeg width="35"/>
+	 </div>
+   </article>
+
+	 <article>
+	 	<Display />
+	 </article>
   </main>
 </template>
