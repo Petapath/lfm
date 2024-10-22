@@ -1,6 +1,7 @@
 <script setup>
 	import { ref }  from 'vue'
 	import Element  from './Element.vue'
+	import Element2 from './Element2.vue'
   import Selector from './Selector.vue'
 	const width = ref(50)
 	const componentController = ref('Nothing')
@@ -12,8 +13,9 @@
 	<br>
 	<hr>
 	<div class="row no-space top-align scroll">
-	<Element @rendercp="(m) => componentController=m" />
-	<Element @rendercp="(m) => componentController=m" />
+	<Element  ctrl-panel-outlet-id="cmpCtrl2" component-id="0x101" @rendercp="(m) => componentController=m" />
+	<Element  ctrl-panel-outlet-id="cmpCtrl2" component-id="0x102" @rendercp="(m) => componentController=m" />
+	<Element2 ctrl-panel-outlet-id="cmpCtrl2" component-id="0x201"/>
 	</div>
 
 	<br>

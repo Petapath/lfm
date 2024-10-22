@@ -1,8 +1,15 @@
 <script setup>
+	import {ref} from 'Vue'
+  import {panelStatus} from './state.js'
+
+  const showCtrlPanel = ref(false)
+	const props = defineProps(['ctrlPanelOutletId','componentId'])
 
   const emit = defineEmits(['rendercp'])
 
 	function renderControlPanel() {
+		console.log(props.ctrlPanelOutletId)
+		console.log(props.componentId)
 		return emit( 'rendercp' ,`<h5>drawer section with free space at top</h5>
     					                <label class="slider medium ">
       				                <input type="range" value="5" min="4" max="8">
@@ -43,11 +50,17 @@
     <nav class="no-space middle-align">
       <button class="circle transparent" style="height:20px;width:20px;"><i class="tiny">line_start_arrow</i><div class="tooltip top">Move to left</div></button>
       <button class="circle transparent" style="height:20px;width:20px;" @click="renderControlPanel"><i class="tiny">expand_more</i><div class="tooltip top">Edit</div></button>
-      <button class="circle transparent" style="height:20px;width:20px;"><i class="tiny">line_end_arrow</i><div class="tooltip top">Move to right</div></button>
+			<button class="circle transparent" style="height:20px;width:20px;" @click="panelStatus.setActive(componentId)"><i class="tiny">line_end_arrow</i></button>
     </nav>
   </article>
 
-	<Teleport defer to="#cmpCtrl2"> 
-		<h1>Ale jaja</h1>
+	<Teleport defer :to="'#' + ctrlPanelOutletId"> 
+      <div v-if="panelStatus.checkActive(componentId)">
+				<h5>Teleported: drawer section with free space at top</h5>
+				<label class="slider medium ">
+				<input type="range" value="5" min="4" max="8">
+				<span></span>
+				</label>
+			</div>
 	</Teleport>
 </template>
