@@ -1,5 +1,5 @@
 <script setup>
-	import {ref} from 'Vue'
+	import {ref} from 'vue'
   import {panelStatus} from './state.js'
 
   const showCtrlPanel = ref(false)
