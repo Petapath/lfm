@@ -39,7 +39,7 @@
       <path stroke="#000000" stroke-width="3px" stroke-linecap="round" stroke-linejoin="round" fill="transparent" d="M7,163 h40 a5,5,0,0,0,5,5 h25 a5,5,0,0,0,5,-5 h40 v30 h-115 z"></path>
         
       <!-- horizontal bars -->
-      <rect class="svg-rect" id="svg_1" x="0" y="70"  width="129" height="15" stroke="#000000" stroke-width="0px" stroke-linecap="round" stroke-linejoin="round" fill="url(#img0)"/>
+      <rect class="svg-rect" id="svg_1" x="0" y="70"  width="129" height="15" stroke="#000000" stroke-width="0px" stroke-linecap="round" stroke-linejoin="round" fill="transparent"/>
       <path stroke="#000000" stroke-width="3px" stroke-linecap="round" stroke-linejoin="round" fill="transparent" d="M0,70 h128"></path>
       <path stroke="#000000" stroke-width="3px" stroke-linecap="round" stroke-linejoin="round" fill="transparent" d="M0,85 h128"></path>
       <rect class="svg-rect" id="svg_1" x="0" y="200" width="129" height="15" stroke="#000000" stroke-width="0px" stroke-linecap="round" stroke-linejoin="round" fill="url(#img0)"/>

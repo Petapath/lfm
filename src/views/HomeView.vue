@@ -34,7 +34,7 @@ const kees = comps.map(({k}) => ({k}));
 	 </div>
    </article>
 
-	 <article>
+	 <article class="large padding responsive">
 	 	<Display />
 	 </article>
   </main>

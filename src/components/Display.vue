@@ -4,7 +4,7 @@
 	import Element2 from './Element2.vue'
   import Selector from './Selector.vue'
 	const width = ref(50)
-	const componentController = ref('Nothing')
+	const componentController = ref(' ')
 </script>
 
 <template>
@@ -20,8 +20,8 @@
 
 	<br>
 
-	<div v-html="componentController" />
-	<div id="cmpCtrl2" />
+	<article class="no-elevate no-round no-padding"  v-html="componentController" />
+	<article class="no-elevate no-round no-padding" id="cmpCtrl2" />
 
 </template>
 
