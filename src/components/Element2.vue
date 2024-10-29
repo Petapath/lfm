@@ -56,8 +56,8 @@
   </article>
 
 	<Teleport defer :to="'#' + ctrlPanelOutletId"> 
-      <article class="no-elevate no-round no-padding" v-if="panelStatus.checkActive(componentId)">
-				<div class="field label suffix border small round" style="width:150px">
+      <div class="padding" v-if="panelStatus.checkActive(componentId)">
+				<div class="field label suffix border small round" style="width:200px">
 					<select v-model="isDrawer">
 						<option value="true">Szuflada</option>
 						<option value="false">Szafka</option>
@@ -69,6 +69,6 @@
 				<input type="range" value="5" min="4" max="8">
 				<span></span>
 				</label>
-			</article>
+			</div>
 	</Teleport>
 </template>
