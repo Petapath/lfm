@@ -1,37 +1,40 @@
 <script setup>
-	import Element  from './Element.vue'
-	import Element2 from './Element2.vue'
+  import { ref }       from 'vue'
+	import DrawerLo      from './ModuleDrawerLo.vue'
+	import DrawerLoMeta  from './ModuleDrawerLoMeta.vue'
+	import SinkSmall     from './ModuleSinkSmall.vue'
+	import SinkSmallMeta from './ModuleSinkSmallMeta.vue'
 
   const emit = defineEmits(['addComponent'])
 
 	const segments = [
 		{
-		  title: 'Szuflady',
-			description: 'Szuflady',
-			avatarImg: 'url',
-			configOptions: 'default',
-			componentHandle: Element
+			componentHandle: DrawerLo,
+      meta           : DrawerLoMeta
 		},
 		{
-		  title: 'Zlew',
-			description: 'Zlew',
-			avatarImg: 'url',
-			configOptions: 'default',
-			componentHandle: Element2
+			componentHandle: SinkSmall,
+		  meta           : SinkSmallMeta
 		}
 	]
+
+	const hnd = ref(null);
+  
 </script>
 
 <template>
-	<h4>This is the component selector</h4>
 	<div class="row scroll">
-		<article class="small-width border" v-for="(v, index) in segments" :key="index">
-			<h5>{{v.title}}</h5>
-			<p>{{v.description}}</p>
+		<article class="small-width border" v-for="(s, index) in segments" :key="index">
+			<component :is="s.meta" v-slot="{meta}">
+			<h5>{{meta.title}}</h5>
+			<p>{{meta.description}}</p>
 			<div class="space"></div>
 			<nav>
-				<button @click="emit('addComponent',v.componentHandle)">Button</button>
+				<button class="circle right-round bottom-round small" @click="emit('addComponent',s.componentHandle)">
+           <i>add</i>
+        </button>
 			</nav>
+		  </component>
 		</article>
 	</div>
 </template>

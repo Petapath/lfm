@@ -1,24 +1,13 @@
 <script setup>
 	import {ref} from 'vue'
   import {panelStatus} from './state.js'
+  import ModuleControlMenu from './ModuleControlMenu.vue'
 
 	const props = defineProps(['ctrlPanelOutletId','componentId'])
   const emit  = defineEmits(['moveLeft','moveRight','remove'])
 
-  const showCtrlPanel = ref(false)
-
-	function renderControlPanel() {
-		console.log(props.ctrlPanelOutletId)
-		console.log(props.componentId)
-		return emit( 'rendercp' ,`<h5>drawer section with free space at top</h5>
-    					                <label class="slider medium ">
-      				                <input type="range" value="5" min="4" max="8">
-      				                <span></span>
-    			                    </label>`)
-	}
-
 	const doSomething = () => {
-		console.log('i did something')
+		console.log('I am ModuleDrawerLo')
 	}
 
 	defineExpose({
@@ -58,11 +47,7 @@
     </svg>
     </span>
 
-    <nav class="no-space middle-align">
-      <button class="circle transparent" style="height:20px;width:20px;" @click="emit('moveLeft')" ><i class="tiny">line_start_arrow</i><div class="tooltip top">Move to left</div></button>
-      <button class="circle transparent" style="height:20px;width:20px;" @click="emit('remove')"   ><i class="tiny">clear</i><div class="tooltip top">Remove</div></button>
-			<button class="circle transparent" style="height:20px;width:20px;" @click="emit('moveRight')"><i class="tiny">line_end_arrow</i><div class="tooltip top">Move to right</div></button>
-    </nav>
+    <ModuleControlMenu @moveLeft="emit('moveLeft')" @remove="emit('remove')" @moveRight="emit('moveRight')"/>
   </article>
 
 	<Teleport defer :to="'#' + ctrlPanelOutletId"> 

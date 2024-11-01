@@ -1,18 +1,20 @@
 <script setup>
 	import {ref} from 'vue'
   import {panelStatus} from './state.js'
+  import ModuleControlMenu from './ModuleControlMenu.vue'
 
-  const showCtrlPanel = ref(false)
-  const isDrawer = ref("true")
 	const props = defineProps(['ctrlPanelOutletId','componentId'])
+  const emit  = defineEmits(['moveLeft','moveRight','remove'])
+
+  const isDrawer = ref("true")
  
-  const stp = [13, 26, 39]
 </script>
 
 <template>
 
   <!-- zlew with a single drawer / store -->
 	<article class="no-elevate no-round no-padding">
+    <span @click="panelStatus.setActive(componentId)" style="cursor: pointer;">
 		<svg width="160" height="220" version="1.1"  xmlns="http://www.w3.org/2000/svg">
 			<defs>
 				<pattern id="img0" patternUnits="userSpaceOnUse" width="200" height="100">
@@ -48,11 +50,9 @@
 			<rect class="svg-rect" id="svg_1" x="154"   y="85" width="5" height="115" stroke="#000000" stroke-width="3px" stroke-linecap="round" stroke-linejoin="round" fill="url(#img0)"/>
 
 		</svg>
+    </span>
 
-		<nav class="no-space middle-align">
-			<button class="circle transparent" style="height:20px;width:20px;"><i class="tiny">line_start_arrow</i></button>
-			<button class="circle transparent" style="height:20px;width:20px;" @click="panelStatus.setActive(componentId)"><i class="tiny">line_end_arrow</i></button>
-		</nav>
+    <ModuleControlMenu @moveLeft="emit('moveLeft')" @remove="emit('remove')" @moveRight="emit('moveRight')"/>
   </article>
 
 	<Teleport defer :to="'#' + ctrlPanelOutletId"> 
