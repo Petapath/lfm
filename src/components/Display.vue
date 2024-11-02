@@ -3,11 +3,13 @@
 	import Element  from './ModuleDrawerLo.vue'
 	import Element2 from './ModuleSinkSmall.vue'
   import Selector from './Selector.vue'
+  import Divider  from './LinkNarrow.vue'
 	const width = ref(50)
 	const dynamicSegments = ref([])
 
 	const addComponent = (c) => {
 	  dynamicSegments.value.push({componentHandle: shallowRef(c), uid: crypto.randomUUID(), rf: ref(null)}) 
+	  dynamicSegments.value.push({componentHandle: shallowRef(Divider), uid: crypto.randomUUID(), rf: ref(null)}) 
 	}
 
   const removeComponent = (cuid) => {
@@ -51,12 +53,12 @@
 			           @remove="removeComponent(c.uid)" 
 					       @moveLeft="moveLeft(c.uid)"
 					       @moveRight="moveRight(c.uid)" 
-					       ctrl-panel-outlet-id="cmpCtrl2"/>
+					       ctrl-panel-outlet-id="module-config-panel"/>
 		</div>
 		</div>
 	</div>
 
-	<div class="elevate padding margin surface-container-high" id="cmpCtrl2"/>
+	<div class="elevate padding margin surface-container-high" id="module-config-panel"/>
 
 </template>
 
