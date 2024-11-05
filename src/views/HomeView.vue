@@ -16,7 +16,7 @@ const kees = comps.map(({k}) => ({k}));
 
 <template>
   <main class="responsive max padding" style="background-color:chartreuse;">
-   <div v-for="(c,i) in comps">
+   <!-- div v-for="(c,i) in comps">
 	   <h4>{{i}} {{c.k}}</h4>
 	   <component :is="c.v"></component>
 	   <br>
@@ -32,7 +32,7 @@ const kees = comps.map(({k}) => ({k}));
      <div class="row no-space top-align scroll">
 		<OuterLeftLeg width="35"/>
 	 </div>
-   </article>
+   </article -->
 
 	 <article class="large padding " style="height:100%">
 	 	<Display />

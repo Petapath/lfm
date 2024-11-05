@@ -46,11 +46,6 @@
 		}
 	}
 
-  const removeComponent = (cuid) => {
-		console.log( "removing " + cuid )
-		dynamicSegments.value = dynamicSegments.value.filter(item => item.uid !== cuid)
-	}
-
   const optimizeLinks = (ds) => {
 	  console.log("optimizing")
 		for (let i=2; i<ds.length-3; i+=2) {
@@ -78,25 +73,42 @@
 		return ds;
 	}
 
+  const removeComponent = (cuid) => {
+		console.log( "removing " + cuid )
+		// dynamicSegments.value = dynamicSegments.value.filter(item => item.uid !== cuid)
+	  const ds = dynamicSegments.value
+		if(ds.length===5) {
+			ds.length=0
+		} else {
+			const i  = ds.findIndex(item => item.uid === cuid)
+			if(i===2) {
+			  ds.splice(i,2)
+			} else {
+			  ds.splice(i-1,2)
+			}
+		  ds=optimizeLinks(ds)
+		}
+	}
+
 	const moveLeft = (cuid) => {
 	  const ds = dynamicSegments.value
 		const i  = ds.findIndex(item => item.uid === cuid)
 		if (i>2) [ds[i-2], ds[i]] = [ds[i], ds[i-2]]
-		dynamicSegments.value=optimizeLinks(ds)
+		ds=optimizeLinks(ds)
 	}
 
 	const moveRight = (cuid) => {
 	  const ds = dynamicSegments.value
 		const i  = ds.findIndex(item => item.uid === cuid)
 		if (i<ds.length-3) [ds[i+2], ds[i]] = [ds[i], ds[i+2]]
-		dynamicSegments.value=optimizeLinks(ds)
+		ds=optimizeLinks(ds)
 	}
 
 </script>
 
 <template>
   
-	<div>{{dynamicSegments}}</div>
+	<!--div>{{dynamicSegments}}</div-->
 
 	<Selector @addComponent="addComponent"/>
 
