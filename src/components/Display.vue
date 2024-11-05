@@ -76,7 +76,7 @@
   const removeComponent = (cuid) => {
 		console.log( "removing " + cuid )
 		// dynamicSegments.value = dynamicSegments.value.filter(item => item.uid !== cuid)
-	  const ds = dynamicSegments.value
+	  let ds = dynamicSegments.value
 		if(ds.length===5) {
 			ds.length=0
 		} else {
@@ -91,14 +91,14 @@
 	}
 
 	const moveLeft = (cuid) => {
-	  const ds = dynamicSegments.value
+	  let ds = dynamicSegments.value
 		const i  = ds.findIndex(item => item.uid === cuid)
 		if (i>2) [ds[i-2], ds[i]] = [ds[i], ds[i-2]]
 		ds=optimizeLinks(ds)
 	}
 
 	const moveRight = (cuid) => {
-	  const ds = dynamicSegments.value
+	  let ds = dynamicSegments.value
 		const i  = ds.findIndex(item => item.uid === cuid)
 		if (i<ds.length-3) [ds[i+2], ds[i]] = [ds[i], ds[i+2]]
 		ds=optimizeLinks(ds)
