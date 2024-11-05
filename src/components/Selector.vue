@@ -30,7 +30,7 @@
 			<p>{{meta.description}}</p>
 			<div class="space"></div>
 			<nav>
-				<button class="circle right-round bottom-round small" @click="emit('addComponent',s.componentHandle)">
+				<button class="circle right-round bottom-round small" @click="emit('addComponent',s.componentHandle,meta.compatibility,meta.defaults)">
            <i>add</i>
         </button>
 			</nav>

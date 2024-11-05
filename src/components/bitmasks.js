@@ -1,9 +1,10 @@
 export const bitmasks = {
   forbidden:  1,
-	fullHeight: 2,
+	terminator: 2,
 	halfHeight: 4,
-	fullWidth:  8,
-	halfWidth: 16,
+	fullHeight: 8,
+	fullWidth: 16,
+	halfWidth: 32,
 	any:      255
 };
 
