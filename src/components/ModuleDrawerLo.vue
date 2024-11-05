@@ -1,6 +1,7 @@
 <script setup>
 	import {ref} from 'vue'
   import {panelStatus} from './state.js'
+  import {bitmasks} from './bitmasks.js'
   import ModuleControlMenu from './ModuleControlMenu.vue'
 
 	const props = defineProps(['ctrlPanelOutletId','componentId'])
@@ -10,8 +11,18 @@
 		console.log('I am ModuleDrawerLo')
 	}
 
+  const compatible  = () => {
+		return { L: bitmasks.fullHeight | bitmasks.halfHeight, R: bitmasks.fullHeight | bitmasks.halfHeight }
+	}
+
+  const defaults = () => {
+		return { L: bitmasks.halfHeight, R: bitmasks.halfHeight }
+	}
+
 	defineExpose({
-		doSomething
+		doSomething,
+    compatible,
+    defaults
 	})
 
 </script>
@@ -21,11 +32,6 @@
   <article class="no-elevate no-round no-padding">
     <span @click="panelStatus.setActive(componentId)" style="cursor: pointer;">
     <svg width="129" height="220" version="1.1"  xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <pattern id="img0" patternUnits="userSpaceOnUse" width="200" height="100">
-          <image href="https://www.shutterstock.com/shutterstock/photos/2478458745/display_1500/stock-photo-dark-wood-texture-background-surface-with-old-natural-pattern-texture-of-retro-plank-wood-plywood-2478458745.jpg" x="0" y="0" width="100" height="100" />
-        </pattern>
-      </defs>
 
       <!-- blat -->
       <rect x="0"   y="8" width="129" height="10" stroke="#000000" stroke-width="0px" stroke-linecap="round" stroke-linejoin="round" fill="transparent"/>
@@ -41,7 +47,7 @@
       <rect class="svg-rect" id="svg_1" x="0" y="70"  width="129" height="15" stroke="#000000" stroke-width="0px" stroke-linecap="round" stroke-linejoin="round" fill="transparent"/>
       <path stroke="#000000" stroke-width="3px" stroke-linecap="round" stroke-linejoin="round" fill="transparent" d="M0,70 h128"></path>
       <path stroke="#000000" stroke-width="3px" stroke-linecap="round" stroke-linejoin="round" fill="transparent" d="M0,85 h128"></path>
-      <rect class="svg-rect" id="svg_1" x="0" y="200" width="129" height="15" stroke="#000000" stroke-width="0px" stroke-linecap="round" stroke-linejoin="round" fill="url(#img0)"/>
+      <rect class="svg-rect" id="svg_1" x="0" y="200" width="129" height="15" stroke="#000000" stroke-width="0px" stroke-linecap="round" stroke-linejoin="round" fill="transparent"/>
       <path stroke="#000000" stroke-width="3px" stroke-linecap="round" stroke-linejoin="round" fill="transparent" d="M0,200 h128"></path>
       <path stroke="#000000" stroke-width="3px" stroke-linecap="round" stroke-linejoin="round" fill="transparent" d="M0,215 h128"></path>
     </svg>

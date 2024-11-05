@@ -1,6 +1,7 @@
 <script setup>
 	import {ref} from 'vue'
   import {panelStatus} from './state.js'
+  import {bitmasks} from './bitmasks.js'
   import ModuleControlMenu from './ModuleControlMenu.vue'
 
 	const props = defineProps(['ctrlPanelOutletId','componentId'])
@@ -12,8 +13,18 @@
 		console.log('I am ModuleDrawerLo')
 	}
 
+  const compatible  = () => {
+		return { L: bitmasks.fullHeight, R: bitmasks.fullHeight }
+	}
+
+  const defaults = () => {
+		return { L: bitmasks.fullHeight, R: bitmasks.fullHeight }
+	}
+
 	defineExpose({
-		doSomething
+		doSomething,
+		compatible,
+		defaults
 	})
  
 </script>

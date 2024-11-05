@@ -3,13 +3,31 @@
 	import Element  from './ModuleDrawerLo.vue'
 	import Element2 from './ModuleSinkSmall.vue'
   import Selector from './Selector.vue'
-  import Divider  from './LinkNarrow.vue'
+  import DividerLow  from './LinkNarrowLower.vue'
+  import DividerFull from './LinkNarrowFullOuter.vue'
+  import TerminatorL from './LinkTerminatorL.vue'
+  import TerminatorR from './LinkTerminatorR.vue'
 	const width = ref(50)
 	const dynamicSegments = ref([])
 
+
 	const addComponent = (c) => {
-	  dynamicSegments.value.push({componentHandle: shallowRef(c), uid: crypto.randomUUID(), rf: ref(null)}) 
-	  dynamicSegments.value.push({componentHandle: shallowRef(Divider), uid: crypto.randomUUID(), rf: ref(null)}) 
+	  const ds  = dynamicSegments.value
+		const dsl = ds.length
+
+		// init with a pair of outer L and R supports
+		if(dsl === 0) {
+			dynamicSegments.value.push({componentHandle: shallowRef(TerminatorL), uid: crypto.randomUUID(), rf: ref(null)}) 
+			dynamicSegments.value.push({componentHandle: shallowRef(DividerFull), uid: crypto.randomUUID(), rf: ref(null)}) 
+			dynamicSegments.value.push({componentHandle: shallowRef(c),           uid: crypto.randomUUID(), rf: ref(null)}) 
+			dynamicSegments.value.push({componentHandle: shallowRef(DividerFull), uid: crypto.randomUUID(), rf: ref(null)}) 
+			dynamicSegments.value.push({componentHandle: shallowRef(TerminatorR), uid: crypto.randomUUID(), rf: ref(null)}) 
+	  }
+    else {
+		// insert at the end always
+
+	  ds.splice(dsl-2,0,{componentHandle: shallowRef(c), uid: crypto.randomUUID(), rf: ref(null)}) 
+		}
 	}
 
   const removeComponent = (cuid) => {
