@@ -4,6 +4,8 @@
 	import DrawerLoMeta  from './ModuleDrawerLoMeta.vue'
 	import SinkSmall     from './ModuleSinkSmall.vue'
 	import SinkSmallMeta from './ModuleSinkSmallMeta.vue'
+	import Oven          from './ModuleOven.vue'
+	import OvenMeta      from './ModuleOvenMeta.vue'
 
   const emit = defineEmits(['addComponent'])
 
@@ -15,6 +17,10 @@
 		{
 			componentHandle: SinkSmall,
 		  meta           : SinkSmallMeta
+		},
+		{
+			componentHandle: Oven,
+		  meta           : OvenMeta
 		}
 	]
 
